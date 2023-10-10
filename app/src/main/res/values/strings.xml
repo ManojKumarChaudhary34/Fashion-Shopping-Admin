@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Fashion Shopping Admin</string>
+    <string name="product_name_hint">Product Name</string>
+    <string name="amount_hint">Amount</string>
+    <string name="description_hint">Description</string>
+    <string name="btn_name">Add Product</string>
+</resources>

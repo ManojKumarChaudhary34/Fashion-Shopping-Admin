@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/spin_kit"
+        android:visibility="gone"
+        style="@style/SpinKitView.Large.FadingCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="15dp"
+        app:SpinKit_Color="@android:color/holo_green_dark"/>
+
+    <ScrollView
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/productImage"
+                android:layout_width="0dp"
+                android:layout_height="350dp"
+                android:tag="1"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/placeholder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius="10dip"
+                app:riv_mutate_background="true" />
+
+            <EditText
+                android:id="@+id/etProductName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/background"
+                android:ems="10"
+                android:hint="@string/product_name_hint"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/productImage"
+                app:layout_constraintStart_toStartOf="@+id/productImage"
+                app:layout_constraintTop_toBottomOf="@+id/productImage" />
+
+            <EditText
+                android:id="@+id/etAmount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:autofillHints="5000"
+                android:background="@drawable/background"
+                android:ems="10"
+                android:hint="@string/amount_hint"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/etProductName"
+                app:layout_constraintStart_toStartOf="@+id/etProductName"
+                app:layout_constraintTop_toBottomOf="@+id/etProductName" />
+
+            <EditText
+                android:id="@+id/etDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/background"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/description_hint"
+                android:inputType="textMultiLine"
+                android:minLines="5"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/etAmount"
+                app:layout_constraintStart_toStartOf="@+id/etAmount"
+                app:layout_constraintTop_toBottomOf="@+id/etAmount" />
+
+            <Button
+                android:id="@+id/btnAddProduct"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:padding="10dp"
+                android:text="@string/btn_name"
+                android:textAllCaps="true"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/productImage"
+                app:layout_constraintStart_toStartOf="@+id/productImage"
+                app:layout_constraintTop_toBottomOf="@+id/etDesc" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</LinearLayout>
